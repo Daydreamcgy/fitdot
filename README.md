@@ -66,8 +66,9 @@ hvigorw assembleHap
 
 产物：`entry/build/default/outputs/default/entry-default-signed.hap`
 
-> 工程里的签名配置是本机的调试签名路径。换一台机器首次运行时，在 DevEco Studio 的
-> **Project Structure → Signing Configs** 里勾选自动签名即可。
+> 仓库不包含任何签名配置（证书路径、证书口令、本机目录均未提交）。
+> 首次运行前在 DevEco Studio 的 **File → Project Structure → Signing Configs** 里
+> 勾选「Automatically generate signature」即可。
 
 ## 目录
 
