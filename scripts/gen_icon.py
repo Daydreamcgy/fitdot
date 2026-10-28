@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
-"""FitDot 图标：白底 + 打卡成功态按钮（蓝环 + 蓝色实心圆，无文字）。"""
+"""FitDot 图标：白底 + 打卡成功态按钮（蓝环 + 蓝色实心圆，无文字）。
+
+用法（在工程根目录或任意目录执行均可）：
+    python scripts/gen_icon.py
+"""
+import os
+
 from PIL import Image, ImageDraw
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SIZE = 1024
 CENTER = SIZE // 2
@@ -28,9 +36,9 @@ d.ellipse(
 out = img.convert('RGB')
 
 targets = [
-    r'D:\Desktop\workspace\MyProject\HMDots\entry\src\main\resources\base\media\icon.png',
-    r'D:\Desktop\workspace\MyProject\HMDots\entry\src\main\resources\base\media\startIcon.png',
-    r'D:\Desktop\workspace\MyProject\HMDots\AppScope\resources\base\media\app_icon.png',
+    os.path.join(ROOT, 'entry', 'src', 'main', 'resources', 'base', 'media', 'icon.png'),
+    os.path.join(ROOT, 'entry', 'src', 'main', 'resources', 'base', 'media', 'startIcon.png'),
+    os.path.join(ROOT, 'AppScope', 'resources', 'base', 'media', 'app_icon.png'),
 ]
 for t in targets:
     out.save(t, 'PNG')
