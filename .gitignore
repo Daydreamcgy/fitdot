@@ -17,3 +17,4 @@
 /_research
 /backups
 /.codegenie
+/scripts/verify_backup.py
