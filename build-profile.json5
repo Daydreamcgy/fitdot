@@ -1,0 +1,63 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\chengy02\\.ohos\\config\\default_HMDots_Gu0vDRIlqkzwk9DLIAxP-sSbY20a9UMGSepzaYibLnc=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A72B0DEF19567F4779D36CC20A8F8B94F1E971E3D97AF742CF7D282302457E8E0F594EB81C754",
+          "profile": "C:\\Users\\chengy02\\.ohos\\config\\default_HMDots_Gu0vDRIlqkzwk9DLIAxP-sSbY20a9UMGSepzaYibLnc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\chengy02\\.ohos\\config\\default_HMDots_Gu0vDRIlqkzwk9DLIAxP-sSbY20a9UMGSepzaYibLnc=.p12",
+          "storePassword": "0000001A2850EA4C3B30C60CE141F3F6B58E972B15365A2CF6B917A3F24450836A3645998C7C23FBCFE7"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        // HarmonyOS 7 / API 26。注意：API 26 起版本号必须写成带补丁号的完整字符串
+        // "26.0.0"，只写 "26" 会导致工程同步失败。
+        // compatibleSdkVersion = 应用能安装的最低系统版本；改成更低的值可兼容旧机型，
+        // 但用到高版本 API 时需要自己做版本判断。
+        "compatibleSdkVersion": "26.0.0",
+        "targetSdkVersion": "26.0.0",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true,
+            // 编译期校验：调用了高于 compatibleSdkVersion 的 API 直接报错。
+            // 官方 strictMode 示例即用此写法；以后下调基线下兼容旧机型时，这道保险很关键。
+            "apiCompatibilityCheck": "error"
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

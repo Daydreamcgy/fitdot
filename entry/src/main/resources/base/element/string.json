@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "健身打卡主模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "健身打卡"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "健身打卡"
+    },
+    {
+      "name": "reason_agent_reminder",
+      "value": "用于每天定时提醒你完成健身打卡"
+    }
+  ]
+}

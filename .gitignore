@@ -1,0 +1,19 @@
+# build & IDE
+**/build
+**/oh_modules
+**/node_modules
+**/.preview
+**/.hvigor
+**/.idea
+**/.test
+**/.cxx
+**/.clangd
+**/.appanalyzer
+*.iml
+/local.properties
+
+# 本地开发资料（不随产品代码发布）
+/docs
+/_research
+/backups
+/.codegenie

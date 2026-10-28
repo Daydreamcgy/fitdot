@@ -1,0 +1,70 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "EntryBackupAbility",
+        "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ]
+      }
+    ],
+    "requestPermissions": [
+      {
+        // 每日打卡提醒（后台代理提醒）所需权限。
+        // 若暂时不需要提醒功能，可整段删除，不影响其余功能。
+        "name": "ohos.permission.PUBLISH_AGENT_REMINDER",
+        "reason": "$string:reason_agent_reminder",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        // 长按打卡时的震动反馈（system_grant，无需用户授权弹窗）。
+        "name": "ohos.permission.VIBRATE"
+      }
+    ]
+  }
+}
